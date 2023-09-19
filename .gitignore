@@ -1,0 +1,33 @@
+# Ignore Jupyter Book build output
+_build/
+_site/
+
+# Ignore Jupyter Book cache and temporary files
+.jupyterbook/
+.jupyter-cache/
+.jupyter-cache-python/
+.jupyter-cache-jupyterbook/
+.jupyter_cache/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python virtual environment files (if you're using virtual environments)
+venv/
+env/
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore system and editor-generated files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+
+# Ignore Jupyter Notebook metadata files
+*.ipynb_metadata/
