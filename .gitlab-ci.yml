@@ -1,0 +1,26 @@
+stages:
+  - documentation
+  - deploy
+
+jupyter-build:
+  stage: documentation
+  image: python:3.10-slim
+  script:
+    - pip install -U jupyter-book
+    - cd doc
+    - jupyter-book clean .
+    - jupyter-book build .
+  artifacts:
+    paths:
+      - doc/_build/
+
+pages:
+  stage: deploy
+  image: busybox:latest
+  script:
+    - mv doc/_build/html public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
